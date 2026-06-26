@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SoCal Home Network | Real Estate & Lending Experts | Southern California</title>
+  <meta name="description" content="SoCal Home Network connects home buyers, sellers, and borrowers with trusted real estate and lending professionals across Southern California." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #07090f;
+      --surface: #0e1525;
+      --surface-2: #141f35;
+      --blue: #2563eb;
+      --blue-light: #3b82f6;
+      --blue-glow: rgba(37,99,235,0.15);
+      --gold: #c9a84c;
+      --gold-light: #e0c068;
+      --white: #ffffff;
+      --text: #e2e8f0;
+      --muted: rgba(226,232,240,0.5);
+      --border: rgba(37,99,235,0.2);
+      --border-gold: rgba(201,168,76,0.25);
+      --radius: 10px;
+      --transition: 0.25s ease;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+
+    /* ── NAV ── */
+    nav { position: sticky; top: 0; z-index: 1000; background: rgba(7,9,15,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    .logo-icon { width: 36px; height: 36px; background: var(--blue); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .logo-icon svg { display: block; }
+    .logo-text .top { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 800; color: var(--white); letter-spacing: 0.5px; line-height: 1; }
+    .logo-text .sub { font-size: 0.58rem; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); line-height: 1; margin-top: 3px; }
+    .nav-links { display: flex; list-style: none; gap: 0; }
+    .nav-links a { display: block; padding: 0.5rem 0.85rem; font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.65); text-decoration: none; transition: color var(--transition); }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { background: var(--blue); color: var(--white) !important; padding: 0.5rem 1.1rem !important; border-radius: 6px; font-weight: 700 !important; }
+    .nav-cta:hover { background: var(--blue-light) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      background: var(--bg);
+      padding: 6rem 5% 5rem;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; left: -200px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(37,99,235,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 1.25rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 700; color: var(--white); line-height: 1.12; max-width: 820px; margin-bottom: 1.5rem; }
+    .hero h1 em { font-style: italic; color: var(--gold-light); }
+    .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 600px; line-height: 1.8; margin-bottom: 2.5rem; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
+    .btn-blue { padding: 0.95rem 2.25rem; background: var(--blue); color: var(--white); font-weight: 700; font-size: 0.95rem; border-radius: 8px; text-decoration: none; transition: background var(--transition); display: inline-block; }
+    .btn-blue:hover { background: var(--blue-light); }
+    .btn-ghost { padding: 0.95rem 2rem; background: transparent; color: var(--white); font-weight: 600; font-size: 0.92rem; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 8px; text-decoration: none; transition: all var(--transition); display: inline-block; }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold-light); }
+
+    /* Areas ticker */
+    .areas-bar { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 0.85rem 5%; overflow: hidden; }
+    .areas-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; gap: 0.5rem; }
+    .areas-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-light); white-space: nowrap; flex-shrink: 0; margin-right: 1rem; }
+    .areas-list { display: flex; gap: 0; flex-wrap: wrap; }
+    .area-pill { font-size: 0.72rem; font-weight: 600; color: var(--muted); padding: 0.25rem 0.75rem; }
+    .area-pill::after { content: '·'; margin-left: 0.75rem; color: var(--border); }
+    .area-pill:last-child::after { display: none; }
+
+    /* ── SECTION SHELL ── */
+    section { padding: 5rem 5%; }
+    .section-inner { max-width: 1280px; margin: 0 auto; }
+    .section-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 0.5rem; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.7rem, 3vw, 2.5rem); font-weight: 700; color: var(--white); line-height: 1.25; margin-bottom: 0.75rem; }
+    .section-sub { font-size: 0.95rem; color: var(--muted); max-width: 580px; line-height: 1.75; margin-bottom: 3rem; }
+
+    /* ── TOPIC CARDS (homepage grid) ── */
+    .topics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    .topic-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem 1.5rem; text-decoration: none; transition: all var(--transition); display: block; }
+    .topic-card:hover { border-color: var(--blue-light); transform: translateY(-3px); box-shadow: 0 8px 32px rgba(37,99,235,0.15); }
+    .topic-card:hover .topic-icon { background: var(--blue); }
+    .topic-icon { width: 44px; height: 44px; background: var(--surface-2); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; transition: background var(--transition); }
+    .topic-tag { font-size: 0.6rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 0.4rem; }
+    .topic-card h3 { font-size: 0.92rem; font-weight: 700; color: var(--white); line-height: 1.35; margin-bottom: 0.5rem; }
+    .topic-card p { font-size: 0.77rem; color: var(--muted); line-height: 1.6; }
+
+    /* Gold-accented topic cards for special programs */
+    .topic-card.gold { border-color: var(--border-gold); }
+    .topic-card.gold:hover { border-color: var(--gold); box-shadow: 0 8px 32px rgba(201,168,76,0.12); }
+    .topic-card.gold .topic-icon { background: rgba(201,168,76,0.1); }
+    .topic-card.gold:hover .topic-icon { background: var(--gold); }
+    .topic-card.gold .topic-tag { color: var(--gold); }
+
+    /* ── LEAD FORMS ── */
+    .lead-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .lead-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .lead-copy h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.5vw, 2.1rem); font-weight: 700; color: var(--white); line-height: 1.3; margin-bottom: 1rem; }
+    .lead-copy p { font-size: 0.92rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; }
+    .lead-bullets { display: flex; flex-direction: column; gap: 10px; }
+    .lead-bullet { display: flex; align-items: flex-start; gap: 10px; font-size: 0.82rem; color: rgba(255,255,255,0.75); }
+    .bullet-dot { width: 7px; height: 7px; background: var(--blue); border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+    .bullet-dot.gold { background: var(--gold); }
+
+    .lead-form { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; }
+    .lead-form h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.35rem; }
+    .lead-form .form-sub { font-size: 0.77rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-bottom: 0.85rem; }
+    .form-group { margin-bottom: 0.85rem; }
+    .form-group label { display: block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); margin-bottom: 0.35rem; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 0.75rem 1rem; border: 1.5px solid rgba(37,99,235,0.2);
+      border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.87rem;
+      background: rgba(255,255,255,0.04); color: var(--text); outline: none; transition: border-color var(--transition);
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--blue-light); }
+    .form-group select option { background: #1a1a2e; }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .btn-submit { width: 100%; padding: 0.95rem; background: var(--blue); color: var(--white); border: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: background var(--transition); margin-top: 0.5rem; }
+    .btn-submit:hover { background: var(--blue-light); }
+    .btn-submit.gold-btn { background: var(--gold); color: #0a0f1e; }
+    .btn-submit.gold-btn:hover { background: var(--gold-light); }
+    .form-success { display: none; text-align: center; padding: 1rem; color: #34d399; font-weight: 600; border: 1px solid rgba(52,211,153,0.3); border-radius: 6px; margin-top: 0.75rem; background: rgba(52,211,153,0.06); font-size: 0.88rem; }
+    .form-note { text-align: center; font-size: 0.68rem; color: rgba(255,255,255,0.2); margin-top: 0.65rem; }
+
+    /* ── TOPIC SECTIONS ── */
+    .topic-section { padding: 5rem 5%; border-top: 1px solid var(--border); }
+    .topic-section:nth-child(even) { background: var(--surface); }
+    .topic-section-inner { max-width: 1280px; margin: 0 auto; }
+
+    /* ── HERO PROGRAMS ── */
+    .hero-programs { background: linear-gradient(135deg, #0e1525 0%, #0a0f1e 100%); border-top: 2px solid var(--gold); }
+    .hero-program-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+    .hero-program-card { background: rgba(201,168,76,0.05); border: 1px solid var(--border-gold); border-radius: var(--radius); padding: 2rem 1.75rem; }
+    .hero-program-card .badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(201,168,76,0.12); border: 1px solid var(--border-gold); border-radius: 20px; padding: 4px 12px; font-size: 0.62rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+    .hero-program-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; }
+    .hero-program-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.25rem; }
+    .hero-program-card ul { padding-left: 1.2rem; }
+    .hero-program-card ul li { font-size: 0.8rem; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 0.25rem; }
+    .hero-program-card ul li::marker { color: var(--gold); }
+
+    /* ── LOAN TYPES ── */
+    .loan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+    .loan-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem 1.5rem; }
+    .loan-card .loan-name { font-size: 0.65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 0.5rem; }
+    .loan-card h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
+    .loan-card .loan-highlight { font-size: 1.35rem; font-weight: 800; color: var(--gold-light); font-family: 'Playfair Display', serif; margin-bottom: 0.75rem; }
+    .loan-card p { font-size: 0.8rem; color: var(--muted); line-height: 1.65; }
+
+    /* ── STATS BAR ── */
+    .stats-bar { background: var(--blue); padding: 2.5rem 5%; }
+    .stats-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--white); }
+    .stat-label { font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.7); margin-top: 4px; letter-spacing: 0.5px; }
+
+    /* ── FOOTER ── */
+    footer { background: #040609; border-top: 1px solid var(--border); padding: 3rem 5%; }
+    .footer-inner { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
+    .footer-logo .top { font-size: 1rem; font-weight: 800; color: var(--white); }
+    .footer-logo .sub { font-size: 0.58rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); display: block; margin-top: 3px; }
+    .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.35); text-decoration: none; transition: color var(--transition); }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom { max-width: 1280px; margin: 1.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+    .footer-bottom p { font-size: 0.68rem; color: rgba(255,255,255,0.18); }
+
+    @media (max-width: 1024px) {
+      .topics-grid { grid-template-columns: repeat(2, 1fr); }
+      .loan-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-program-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 72px; left: 0; right: 0; background: var(--bg); padding: 1.5rem 5%; z-index: 999; border-top: 1px solid var(--border); gap: 0; }
+      .nav-links.open li a { padding: 0.85rem 0; display: block; border-bottom: 1px solid var(--border); }
+      .hamburger { display: flex; }
+      .hero { padding: 3.5rem 5% 3rem; }
+      .hero-btns { flex-direction: column; }
+      .btn-blue, .btn-ghost { width: 100%; text-align: center; }
+      .areas-inner { flex-direction: column; gap: 0.75rem; }
+      .areas-list { gap: 0; }
+      .area-pill { font-size: 0.7rem; }
+      section { padding: 3.5rem 5%; }
+      .topic-section { padding: 3.5rem 5%; }
+      .lead-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .topics-grid { grid-template-columns: 1fr 1fr; }
+      .loan-grid { grid-template-columns: 1fr; }
+      .stats-bar { padding: 2rem 5%; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+      .stat-num { font-size: 1.75rem; }
+      .hero-program-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .footer-inner { flex-direction: column; gap: 1.25rem; }
+      .footer-links { gap: 1rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; }
+      .lead-form { padding: 1.5rem; }
+      .logo-text .top { font-size: 0.88rem; }
+    }
+    @media (max-width: 480px) {
+      .topics-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+      .hero-program-card { padding: 1.5rem 1.25rem; }
+      .loan-card { padding: 1.25rem; }
+      .lead-form { padding: 1.25rem; }
+      .form-group input, .form-group select, .form-group textarea { font-size: 16px; } /* prevents iOS zoom */
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="logo-text">
+        <div class="top">SoCal Home Network</div>
+        <span class="sub">Southern California</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#sellers">Sellers</a></li>
+      <li><a href="#buyers">Buyers</a></li>
+      <li><a href="#lending">Lending</a></li>
+      <li><a href="#heroes">Hero Programs</a></li>
+      <li><a href="#contact" class="nav-cta">Talk to a Professional</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Serving Southern California &bull; Real Estate &bull; Lending</div>
+    <h1>Your Local Real Estate<br />&amp; Lending <em>Experts.</em></h1>
+    <p class="hero-sub">Whether you're selling, buying, or financing — SoCal Home Network connects you with experienced local professionals who know your market and will guide you every step of the way.</p>
+    <div class="hero-btns">
+      <a href="#home-value" class="btn-blue">Find Out What My Home Is Worth →</a>
+      <a href="#contact" class="btn-ghost">Talk to a Professional</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── AREAS SERVED ── -->
+<div class="areas-bar">
+  <div class="areas-inner">
+    <div class="areas-label">Serving</div>
+    <div class="areas-list">
+      <span class="area-pill">Los Angeles County</span>
+      <span class="area-pill">San Bernardino County</span>
+      <span class="area-pill">Riverside County</span>
+      <span class="area-pill">Orange County</span>
+      <span class="area-pill">Ventura County</span>
+      <span class="area-pill">San Diego County</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── WHAT WE HELP WITH ── -->
+<section>
+  <div class="section-inner">
+    <p class="section-label">How We Can Help</p>
+    <h2 class="section-title">Every Real Estate Question.<br />One Network.</h2>
+    <p class="section-sub">Whether you're selling your home, buying your first property, navigating an inheritance, or looking for the right loan — our professionals are here to guide you.</p>
+    <div class="topics-grid">
+      <a href="#home-value" class="topic-card">
+        <div class="topic-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+        <div class="topic-tag">Sellers</div>
+        <h3>What Is My Home Worth?</h3>
+        <p>Get a free, accurate home valuation from a local expert — not an algorithm.</p>
+      </a>
+      <a href="#net-proceeds" class="topic-card">
+        <div class="topic-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="topic-tag">Sellers</div>
+        <h3>How Much Will I Net After Selling?</h3>
+        <p>Know exactly what you'll walk away with before you ever list your home.</p>
+      </a>
+      <a href="#inherited" class="topic-card">
+        <div class="topic-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div class="topic-tag">Sellers</div>
+        <h3>I Inherited a Property — Now What?</h3>
+        <p>Navigating an inherited home is complex. Let a professional help you understand your options.</p>
+      </a>
+      <a href="#investment" class="topic-card">
+        <div class="topic-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+        <div class="topic-tag">Investors</div>
+        <h3>Investment Property — Sell, Rent, or 1031?</h3>
+        <p>Get expert guidance on maximizing the return on your investment property.</p>
+      </a>
+      <a href="#improvements" class="topic-card">
+        <div class="topic-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <div class="topic-tag">Pre-Listing</div>
+        <h3>What Improvements Should I Make Before Selling?</h3>
+        <p>Find out which upgrades actually pay off — and which ones to skip.</p>
+      </a>
+      <a href="#buyers" class="topic-card">
+        <div class="topic-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <div class="topic-tag">Buyers</div>
+        <h3>Ready to Buy a Home?</h3>
+        <p>From first-time buyers to seasoned investors — we'll connect you with the right agent for your search.</p>
+      </a>
+      <a href="#lending" class="topic-card">
+        <div class="topic-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <div class="topic-tag">Lending</div>
+        <h3>What Loan Is Right for Me?</h3>
+        <p>FHA, VA, Conventional, Jumbo — find the loan that fits your situation and budget.</p>
+      </a>
+      <a href="#heroes" class="topic-card gold">
+        <div class="topic-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="topic-tag">Special Programs</div>
+        <h3>First Responder, Healthcare & Teacher Programs</h3>
+        <p>Exclusive benefits, down payment assistance, and special loan programs for those who serve.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS BAR ── -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div><div class="stat-num">6</div><div class="stat-label">Counties Served</div></div>
+    <div><div class="stat-num">$500M+</div><div class="stat-label">In Transactions Guided</div></div>
+    <div><div class="stat-num">1,000+</div><div class="stat-label">Families Helped</div></div>
+    <div><div class="stat-num">10+</div><div class="stat-label">Years of Local Expertise</div></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+     SELLER SECTIONS
+══════════════════════════ -->
+
+<!-- HOME VALUE -->
+<div class="topic-section" id="home-value">
+  <div class="topic-section-inner">
+    <div class="lead-grid">
+      <div class="lead-copy">
+        <p class="section-label">Seller Resource</p>
+        <h2 class="section-title">What Is My Home Worth?</h2>
+        <p>In today's fast-moving SoCal market, knowing your home's true value is the foundation of every smart decision. Our professionals provide a free, accurate valuation based on real recent sales in your neighborhood — not an algorithm estimate that can be off by tens of thousands of dollars.</p>
+        <div class="lead-bullets">
+          <div class="lead-bullet"><div class="bullet-dot"></div>Accurate valuation based on real local comps</div>
+          <div class="lead-bullet"><div class="bullet-dot"></div>No obligation — just information you can act on</div>
+          <div class="lead-bullet"><div class="bullet-dot"></div>Know your equity position before you make any decision</div>
+          <div class="lead-bullet"><div class="bullet-dot"></div>Response within 24 hours from a local professional</div>
+        </div>
+      </div>
+      <div class="lead-form">
+        <h3>Get My Free Home Value</h3>
+        <p class="form-sub">Fill out the form and one of our professionals will reach out with your home's value.</p>
+        <div id="hv-success" class="form-success">✓ Request received! A professional will be in touch within 24 hours.</div>
+        <form id="hv-form">
+          <div class="form-row">
+            <div class="form-group"><label>First Name</label><input type="text" name="First Name" placeholder="Jane" required /></div>
+            <div class="form-group"><label>Last Name</label><input type="text" name="Last Name" placeholder="Smith" required /></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Phone</label><input type="tel" name="Phone" placeholder="(909) 555-0100" required /></div>
+            <div class="form-group"><label>Email</label><input type="email" name="Email" placeholder="jane@email.com" required /></div>
+          </div>
+          <div class="form-group"><label>Property Address</label><input type="text" name="Property Address" placeholder="123 Main St, Rancho Cucamonga, CA" required /></div>
+          <div class="form-group">
+            <label>When Are You Looking to Sell?</label>
+            <select name="Timeline">
+              <option value="" disabled selected>Select a timeline</option>
+              <option>As soon as possible</option>
+              <option>Within 1–3 months</option>
+              <option>Within 3–6 months</option>
+              <option>Just exploring my options</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-submit">Get My Free Home Value →</button>
+        </form>
+        <p class="form-note">Your information is private and will never be sold or shared.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NET PROCEEDS -->
+<div class="topic-section" id="net-proceeds">
+  <div class="topic-section-inner">
+    <div class="lead-grid">
+      <div class="lead-copy">
+        <p class="section-label">Seller Resource</p>
+        <h2 class="section-title">How Much Will I Walk Away With?</h2>
+        <p>Before you sell, you deserve to know exactly what you'll net after commissions, closing costs, and paying off your mortgage. Our professionals will walk you through a detailed net proceeds estimate so there are no surprises at closing.</p>
+        <div class="lead-bullets">
+          <div class="lead-bullet"><div class="bullet-dot"></div>Estimated sale price based on current market</div>
+          <div class="lead-bullet"><div class="bullet-dot"></div>Full breakdown of closing costs and commissions</div>
+          <div class="lead-bullet"><div class="bullet-dot"></div>Your estimated mortgage payoff</div>
+          <div class="lead-bullet"><div class="bullet-dot"></div>Net cash in your pocket — before you list</div>
+        </div>
+      </div>
+      <div class="lead-form">
+        <h3>Calculate My Net Proceeds</h3>
+        <p class="form-sub">Tell us about your home and we'll put together a personalized net proceeds estimate.</p>
+        <div id="np-success" class="form-success">✓ Request received! A professional will be in touch within 24 hours.</div>
+        <form id="np-form">
+          <div class="form-row">
+            <div class="form-group"><label>First Name</label><input type="text" name="First Name" placeholder="Jane" required /></div>
+            <div class="form-group"><label>Last Name</label><input type="text" name="Last Name" placeholder="Smith" required /></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Phone</label><input type="tel" name="Phone" placeholder="(909) 555-0100" required /></div>
+            <div class="form-group"><label>Email</label><input type="email" name="Email" placeholder="jane@email.com" required /></div>
+          </div>
+          <div class="form-group"><label>Property Address</label><input type="text" name="Property Address" placeholder="123 Main St, City, CA" /></div>
+          <div class="form-group">
+            <label>When Are You Looking to Sell?</label>
+            <select name="Timeline">
+              <option value="" disabled selected>Select a timeline</option>
+              <option>As soon as possible</option>
+              <option>Within 1–3 months</option>
+              <option>Within 3–6 months</option>
+              <option>Just exploring my options</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-submit">Get My Net Proceeds Estimate →</button>
+        </form>
+        <p class="form-note">Your information is private and will never be sold or shared.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INHERITED PROPERTY -->
+<div class="topic-section" id="inherited">
+  <div class="topic-section-inner">
+    <div class="lead-grid">
+      <div class="lead-copy">
+        <p class="section-label">Inherited Property</p>
+        <h2 class="section-title">I Inherited a Property — What Are My Options?</h2>
+        <p>Inheriting a home comes with big decisions and often a tight timeline. Whether the property is in probate, needs repairs, or you're simply unsure what to do — our professionals will walk you through every option so you can make the best decision for your situation.</p>
+        <div class="lead-bullets">
+          <div class="lead-bullet"><div class="bullet-dot"></div>Understand your options — sell, rent, or keep</div>
+          <div class="lead-bullet"><div class="bullet-dot"></div>Guidance through the probate process</div>
+          <div class="lead-bullet"><div class="bullet-dot"></div>Step-up in basis explained — potential tax savings</div>
+          <div class="lead-bullet"><div class="bullet-dot"></div>No-pressure consultation from an experienced local agent</div>
+        </div>
+      </div>
+      <div class="lead-form">
+        <h3>Get Help With an Inherited Property</h3>
+        <p class="form-sub">One of our professionals will reach out to walk you through your options — no pressure, no obligation.</p>
+        <div id="inh-success" class="form-success">✓ Request received! A professional will be in touch within 24 hours.</div>
+        <form id="inh-form">
+          <div class="form-row">
+            <div class="form-group"><label>First Name</label><input type="text" name="First Name" placeholder="Jane" required /></div>
+            <div class="form-group"><label>Last Name</label><input type="text" name="Last Name" placeholder="Smith" required /></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Phone</label><input type="tel" name="Phone" placeholder="(909) 555-0100" required /></div>
+            <div class="form-group"><label>Email</label><input type="email" name="Email" placeholder="jane@email.com" required /></div>
+          </div>
+          <div class="form-group"><label>Property Address</label><input type="text" name="Property Address" placeholder="Address of inherited property" /></div>
+          <div class="form-group">
+            <label>Where Are You in the Process?</label>
+            <select name="Situation">
+              <option value="" disabled selected>Select your situation</option>
+              <option>Just inherited — not sure what to do</option>
+              <option>Property is in probate</option>
+              <option>Ready to sell the property</option>
+              <option>Considering renting it out</option>
+              <option>Multiple heirs involved</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Additional Details (optional)</label><textarea name="Details" placeholder="Tell us a little more about your situation..."></textarea></div>
+          <button type="submit" class="btn-submit">Get Help With My Inherited Property →</button>
+        </form>
+        <p class="form-note">Your information is private and will never be sold or shared.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INVESTMENT PROPERTY -->
+<div class="topic-section" id="investment">
+  <div class="topic-section-inner">
+    <div class="lead-grid">
+      <div class="lead-copy">
+        <p class="section-label">Investors</p>
+        <h2 class="section-title">Investment Property — Sell, Rent, or 1031 Exchange?</h2>
+        <p>Every investment property owner reaches a crossroads. Our real estate professionals will help you evaluate your options — from maximizing rental income to executing a 1031 exchange that defers your capital gains and builds more wealth.</p>
+        <div class="lead-bullets">
+          <div class="lead-bullet"><div class="bullet-dot"></div>Current market value and cap rate analysis</div>
+          <div class="lead-bullet"><div class="bullet-dot"></div>1031 exchange guidance — defer capital gains taxes</div>
+          <div class="lead-bullet"><div class="bullet-dot"></div>Sell vs. rent analysis for your specific property</div>
+          <div class="lead-bullet"><div class="bullet-dot"></div>Connect with 1031 exchange qualified intermediaries</div>
+        </div>
+      </div>
+      <div class="lead-form">
+        <h3>Get Investment Property Guidance</h3>
+        <p class="form-sub">Tell us about your investment property and a professional will reach out with your options.</p>
+        <div id="inv-success" class="form-success">✓ Request received! A professional will be in touch within 24 hours.</div>
+        <form id="inv-form">
+          <div class="form-row">
+            <div class="form-group"><label>First Name</label><input type="text" name="First Name" placeholder="Jane" required /></div>
+            <div class="form-group"><label>Last Name</label><input type="text" name="Last Name" placeholder="Smith" required /></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Phone</label><input type="tel" name="Phone" placeholder="(909) 555-0100" required /></div>
+            <div class="form-group"><label>Email</label><input type="email" name="Email" placeholder="jane@email.com" required /></div>
+          </div>
+          <div class="form-group"><label>Property Address</label><input type="text" name="Property Address" placeholder="Investment property address" /></div>
+          <div class="form-group">
+            <label>What Are You Considering?</label>
+            <select name="Goal">
+              <option value="" disabled selected>Select your goal</option>
+              <option>Sell the property</option>
+              <option>1031 Exchange into another property</option>
+              <option>Rent it out</option>
+              <option>Not sure — need guidance</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-submit">Get Investment Property Guidance →</button>
+        </form>
+        <p class="form-note">Your information is private and will never be sold or shared.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IMPROVEMENTS -->
+<div class="topic-section" id="improvements">
+  <div class="topic-section-inner">
+    <div class="lead-grid">
+      <div class="lead-copy">
+        <p class="section-label">Pre-Listing</p>
+        <h2 class="section-title">What Should I Fix Before I Sell?</h2>
+        <p>Not every repair is worth making. Our agents will walk through your home and tell you exactly which improvements will increase your sale price — and which ones you can skip entirely. Stop guessing and start maximizing.</p>
+        <div class="lead-bullets">
+          <div class="lead-bullet"><div class="bullet-dot"></div>Personalized pre-listing consultation</div>
+          <div class="lead-bullet"><div class="bullet-dot"></div>Know which repairs have the highest ROI</div>
+          <div class="lead-bullet"><div class="bullet-dot"></div>Staging advice to make your home show beautifully</div>
+          <div class="lead-bullet"><div class="bullet-dot"></div>Save money by skipping improvements buyers won't pay for</div>
+        </div>
+      </div>
+      <div class="lead-form">
+        <h3>Get a Pre-Listing Consultation</h3>
+        <p class="form-sub">One of our agents will reach out to discuss what improvements will actually pay off for your home.</p>
+        <div id="imp-success" class="form-success">✓ Request received! A professional will be in touch within 24 hours.</div>
+        <form id="imp-form">
+          <div class="form-row">
+            <div class="form-group"><label>First Name</label><input type="text" name="First Name" placeholder="Jane" required /></div>
+            <div class="form-group"><label>Last Name</label><input type="text" name="Last Name" placeholder="Smith" required /></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Phone</label><input type="tel" name="Phone" placeholder="(909) 555-0100" required /></div>
+            <div class="form-group"><label>Email</label><input type="email" name="Email" placeholder="jane@email.com" required /></div>
+          </div>
+          <div class="form-group"><label>Property Address</label><input type="text" name="Property Address" placeholder="123 Main St, City, CA" /></div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Budget for Improvements</label>
+              <select name="Budget">
+                <option value="" disabled selected>Select budget</option>
+                <option>Under $5,000</option>
+                <option>$5,000 – $15,000</option>
+                <option>$15,000 – $30,000</option>
+                <option>$30,000+</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>When Looking to List?</label>
+              <select name="Timeline">
+                <option value="" disabled selected>Select timeline</option>
+                <option>Within 30 days</option>
+                <option>1–3 months</option>
+                <option>3–6 months</option>
+                <option>Just planning ahead</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn-submit">Get My Pre-Listing Consultation →</button>
+        </form>
+        <p class="form-note">Your information is private and will never be sold or shared.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+     BUYER SECTION
+══════════════════════════ -->
+<div class="topic-section" id="buyers">
+  <div class="topic-section-inner">
+    <div class="lead-grid">
+      <div class="lead-copy">
+        <p class="section-label">Buyers</p>
+        <h2 class="section-title">Ready to Find Your Next Home?</h2>
+        <p>From first-time buyers navigating the process for the first time to seasoned investors expanding their portfolio — our agents know the Alta Loma to Pasadena corridor inside and out. We'll help you find the right home, make a strong offer, and close with confidence.</p>
+        <div class="lead-bullets">
+          <div class="lead-bullet"><div class="bullet-dot"></div>Expert local market knowledge across Southern California</div>
+          <div class="lead-bullet"><div class="bullet-dot"></div>Access to homes before they hit Zillow</div>
+          <div class="lead-bullet"><div class="bullet-dot"></div>Strong offer strategy in a competitive market</div>
+          <div class="lead-bullet"><div class="bullet-dot"></div>First-time buyer programs and down payment assistance available</div>
+        </div>
+      </div>
+      <div class="lead-form">
+        <h3>Start My Home Search</h3>
+        <p class="form-sub">Tell us what you're looking for and a local buyer's agent will reach out within 24 hours.</p>
+        <div id="buy-success" class="form-success">✓ Request received! A professional will be in touch within 24 hours.</div>
+        <form id="buy-form">
+          <div class="form-row">
+            <div class="form-group"><label>First Name</label><input type="text" name="First Name" placeholder="Jane" required /></div>
+            <div class="form-group"><label>Last Name</label><input type="text" name="Last Name" placeholder="Smith" required /></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Phone</label><input type="tel" name="Phone" placeholder="(909) 555-0100" required /></div>
+            <div class="form-group"><label>Email</label><input type="email" name="Email" placeholder="jane@email.com" required /></div>
+          </div>
+          <div class="form-group"><label>What Area Are You Looking In?</label><input type="text" name="Area" placeholder="City or zip code in Southern California" /></div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Budget</label>
+              <select name="Budget">
+                <option value="" disabled selected>Select range</option>
+                <option>Under $500,000</option>
+                <option>$500,000 – $700,000</option>
+                <option>$700,000 – $900,000</option>
+                <option>$900,000 – $1.2M</option>
+                <option>$1.2M+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Are You Pre-Approved?</label>
+              <select name="Pre-Approved">
+                <option value="" disabled selected>Select</option>
+                <option>Yes — ready to go</option>
+                <option>No — need a lender</option>
+                <option>In process</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn-submit">Start My Home Search →</button>
+        </form>
+        <p class="form-note">Your information is private and will never be sold or shared.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+     LENDING SECTION
+══════════════════════════ -->
+<section id="lending" style="background: var(--surface); border-top: 1px solid var(--border); padding: 5rem 5%;">
+  <div class="section-inner">
+    <p class="section-label">Lending</p>
+    <h2 class="section-title">Find the Right Loan for Your Situation</h2>
+    <p class="section-sub">Our trusted lending professionals will match you with the right loan program — whether you're buying your first home, refinancing, or investing. No pressure, just honest guidance.</p>
+    <div class="loan-grid">
+      <div class="loan-card">
+        <div class="loan-name">FHA Loan</div>
+        <h3>Low Down Payment</h3>
+        <div class="loan-highlight">3.5% Down</div>
+        <p>Government-backed loan ideal for first-time buyers or those with lower credit scores. Flexible qualification requirements with competitive rates.</p>
+      </div>
+      <div class="loan-card">
+        <div class="loan-name">VA Loan</div>
+        <h3>For Veterans & Active Military</h3>
+        <div class="loan-highlight">0% Down</div>
+        <p>Zero down payment, no PMI, and competitive interest rates — exclusively for veterans, active-duty military, and eligible surviving spouses.</p>
+      </div>
+      <div class="loan-card">
+        <div class="loan-name">Conventional Loan</div>
+        <h3>Standard Home Purchase</h3>
+        <div class="loan-highlight">3–20% Down</div>
+        <p>The most common loan type. Best rates for borrowers with strong credit. Avoid PMI with 20% down. Available for primary, second homes, and investments.</p>
+      </div>
+      <div class="loan-card">
+        <div class="loan-name">Jumbo Loan</div>
+        <h3>High-Value Properties</h3>
+        <div class="loan-highlight">$800K+</div>
+        <p>For home purchases that exceed conventional loan limits. Competitive rates for well-qualified buyers purchasing higher-priced SoCal homes.</p>
+      </div>
+      <div class="loan-card">
+        <div class="loan-name">CalHFA</div>
+        <h3>Down Payment Assistance</h3>
+        <div class="loan-highlight">Up to $150K</div>
+        <p>California Housing Finance Agency programs help first-time buyers with down payment and closing cost assistance. Multiple programs available based on income and location.</p>
+      </div>
+      <div class="loan-card">
+        <div class="loan-name">USDA Loan</div>
+        <h3>Rural & Suburban Areas</h3>
+        <div class="loan-highlight">0% Down</div>
+        <p>Zero down payment for eligible rural and suburban properties. Some areas along the 210 corridor may qualify. Ask a lender about eligibility for your target area.</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 3.5rem;">
+      <div class="lead-grid">
+        <div class="lead-copy">
+          <p class="section-label">Lending</p>
+          <h2 class="section-title">Talk to a Lending Professional</h2>
+          <p>Not sure which loan is right for you? Our lending professionals will review your situation and find the best program — with no obligation and no hard credit pull until you're ready.</p>
+          <div class="lead-bullets">
+            <div class="lead-bullet"><div class="bullet-dot"></div>Find out exactly how much you qualify for</div>
+            <div class="lead-bullet"><div class="bullet-dot"></div>Compare loan programs side by side</div>
+            <div class="lead-bullet"><div class="bullet-dot"></div>Down payment assistance programs explained</div>
+            <div class="lead-bullet"><div class="bullet-dot"></div>Get pre-approved and start shopping with confidence</div>
+          </div>
+        </div>
+        <div class="lead-form">
+          <h3>Connect With a Lending Professional</h3>
+          <p class="form-sub">Fill out the form and a licensed lender will reach out to walk you through your options.</p>
+          <div id="lend-success" class="form-success">✓ Request received! A lending professional will be in touch within 24 hours.</div>
+          <form id="lend-form">
+            <div class="form-row">
+              <div class="form-group"><label>First Name</label><input type="text" name="First Name" placeholder="Jane" required /></div>
+              <div class="form-group"><label>Last Name</label><input type="text" name="Last Name" placeholder="Smith" required /></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Phone</label><input type="tel" name="Phone" placeholder="(909) 555-0100" required /></div>
+              <div class="form-group"><label>Email</label><input type="email" name="Email" placeholder="jane@email.com" required /></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Loan Type I'm Interested In</label>
+                <select name="Loan Type">
+                  <option value="" disabled selected>Select loan type</option>
+                  <option>FHA — Low Down Payment</option>
+                  <option>VA — Veteran / Military</option>
+                  <option>Conventional</option>
+                  <option>Jumbo</option>
+                  <option>Down Payment Assistance / CalHFA</option>
+                  <option>USDA</option>
+                  <option>Not sure — need guidance</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Purchase Price Range</label>
+                <select name="Purchase Price">
+                  <option value="" disabled selected>Select range</option>
+                  <option>Under $500,000</option>
+                  <option>$500,000 – $700,000</option>
+                  <option>$700,000 – $900,000</option>
+                  <option>$900,000 – $1.2M</option>
+                  <option>$1.2M+</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>What's Your Timeline?</label>
+              <select name="Timeline">
+                <option value="" disabled selected>Select timeline</option>
+                <option>Ready to get pre-approved now</option>
+                <option>Buying within 1–3 months</option>
+                <option>Buying within 3–6 months</option>
+                <option>Just exploring options</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-submit">Connect With a Lender →</button>
+          </form>
+          <p class="form-note">Your information is private and will never be sold or shared.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     HERO PROGRAMS
+══════════════════════════ -->
+<section class="hero-programs" id="heroes" style="padding: 5rem 5%;">
+  <div class="section-inner">
+    <p class="section-label" style="color: var(--gold);">Special Programs</p>
+    <h2 class="section-title">You Serve Our Community.<br />We'll Help You Find Your Home.</h2>
+    <p class="section-sub">Exclusive real estate and lending programs for the people who keep our communities safe, healthy, and educated. You've earned these benefits — let us help you use them.</p>
+    <div class="hero-program-grid">
+
+      <div class="hero-program-card">
+        <div class="badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          First Responders
+        </div>
+        <h3>Police, Fire & EMT</h3>
+        <p>Law enforcement officers, firefighters, paramedics, and EMTs may qualify for exclusive home buying benefits including reduced rates, down payment assistance, and closing cost credits.</p>
+        <ul>
+          <li>Homes for Heroes affiliate benefits</li>
+          <li>Special lender rate reductions</li>
+          <li>Down payment assistance programs</li>
+          <li>Reduced real estate commissions and fees</li>
+          <li>Priority service and dedicated agent support</li>
+        </ul>
+      </div>
+
+      <div class="hero-program-card">
+        <div class="badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          Healthcare
+        </div>
+        <h3>Nurses, Doctors & Medical Staff</h3>
+        <p>Healthcare workers — including nurses, physicians, medical technicians, and hospital staff — qualify for special home buying programs designed to make homeownership more accessible.</p>
+        <ul>
+          <li>Healthcare worker mortgage programs</li>
+          <li>Reduced lender fees and points</li>
+          <li>Down payment and closing cost assistance</li>
+          <li>Flexible qualification for travel nurses</li>
+          <li>Dedicated agent who understands your schedule</li>
+        </ul>
+      </div>
+
+      <div class="hero-program-card">
+        <div class="badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          Educators
+        </div>
+        <h3>Teachers & School Staff</h3>
+        <p>Teachers, administrators, and school staff qualify for some of the strongest home buying programs available — including CalHFA's school employee programs and Homes for Heroes benefits.</p>
+        <ul>
+          <li>CalHFA educator down payment programs</li>
+          <li>Extra assistance for Title I school employees</li>
+          <li>Homes for Heroes educator benefits</li>
+          <li>Reduced fees and priority service</li>
+          <li>Programs available for classified and certified staff</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div style="margin-top: 3.5rem;">
+      <div class="lead-grid">
+        <div class="lead-copy">
+          <p class="section-label" style="color: var(--gold);">Hero Programs</p>
+          <h2 class="section-title">Find Out What Benefits You Qualify For</h2>
+          <p>Every program is different and benefits vary based on your profession, location, and financial situation. Fill out the form and one of our Hero Program specialists will reach out to walk you through exactly what you qualify for.</p>
+          <div class="lead-bullets">
+            <div class="lead-bullet"><div class="bullet-dot gold"></div>Free consultation — no obligation</div>
+            <div class="lead-bullet"><div class="bullet-dot gold"></div>Know your benefits before you start shopping</div>
+            <div class="lead-bullet"><div class="bullet-dot gold"></div>Combine programs for maximum savings</div>
+            <div class="lead-bullet"><div class="bullet-dot gold"></div>Agents who specialize in hero program transactions</div>
+          </div>
+        </div>
+        <div class="lead-form" style="border-color: var(--border-gold);">
+          <h3>Get My Hero Program Benefits</h3>
+          <p class="form-sub">Tell us about your profession and we'll find every benefit you qualify for.</p>
+          <div id="hero-success" class="form-success">✓ Request received! A Hero Program specialist will be in touch within 24 hours.</div>
+          <form id="hero-form">
+            <div class="form-row">
+              <div class="form-group"><label>First Name</label><input type="text" name="First Name" placeholder="Jane" required /></div>
+              <div class="form-group"><label>Last Name</label><input type="text" name="Last Name" placeholder="Smith" required /></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Phone</label><input type="tel" name="Phone" placeholder="(909) 555-0100" required /></div>
+              <div class="form-group"><label>Email</label><input type="email" name="Email" placeholder="jane@email.com" required /></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Your Profession</label>
+                <select name="Profession" required>
+                  <option value="" disabled selected>Select profession</option>
+                  <optgroup label="First Responders">
+                    <option>Law Enforcement / Police Officer</option>
+                    <option>Firefighter</option>
+                    <option>Paramedic / EMT</option>
+                    <option>Corrections Officer</option>
+                    <option>911 Dispatcher</option>
+                  </optgroup>
+                  <optgroup label="Healthcare">
+                    <option>Registered Nurse (RN)</option>
+                    <option>Physician / Doctor</option>
+                    <option>Medical Technician</option>
+                    <option>Healthcare Administrator</option>
+                    <option>Other Healthcare Professional</option>
+                  </optgroup>
+                  <optgroup label="Educators">
+                    <option>K-12 Teacher</option>
+                    <option>School Administrator</option>
+                    <option>Classified School Staff</option>
+                    <option>College / University Staff</option>
+                  </optgroup>
+                  <optgroup label="Military">
+                    <option>Active Duty Military</option>
+                    <option>Veteran</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Buying or Selling?</label>
+                <select name="Goal">
+                  <option value="" disabled selected>Select</option>
+                  <option>Buying a Home</option>
+                  <option>Selling My Home</option>
+                  <option>Both — Selling and Buying</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Area You're Interested In</label>
+              <input type="text" name="Area" placeholder="City or zip code in Southern California" />
+            </div>
+            <button type="submit" class="btn-submit gold-btn">Find My Hero Benefits →</button>
+          </form>
+          <p class="form-note">Your information is private and will never be sold or shared.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GENERAL CONTACT ── -->
+<section id="contact" style="padding: 5rem 5%; border-top: 1px solid var(--border);">
+  <div class="section-inner" style="max-width: 720px;">
+    <p class="section-label" style="text-align:center;">Get Started</p>
+    <h2 class="section-title" style="text-align:center;">Not Sure Where to Start?<br />We'll Point You in the Right Direction.</h2>
+    <p class="section-sub" style="text-align:center; margin: 0.75rem auto 2.5rem;">Tell us a little about your situation and one of our real estate or lending professionals will reach out to help you figure out the best next step — no pressure, no obligation.</p>
+    <div class="lead-form" style="max-width:100%;">
+      <div id="gen-success" class="form-success">✓ Message received! A professional will be in touch within 24 hours.</div>
+      <form id="gen-form">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" name="First Name" placeholder="Jane" required /></div>
+          <div class="form-group"><label>Last Name</label><input type="text" name="Last Name" placeholder="Smith" required /></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Phone</label><input type="tel" name="Phone" placeholder="(909) 555-0100" required /></div>
+          <div class="form-group"><label>Email</label><input type="email" name="Email" placeholder="jane@email.com" required /></div>
+        </div>
+        <div class="form-group">
+          <label>What Can We Help You With?</label>
+          <select name="Topic" required>
+            <option value="" disabled selected>Select a topic</option>
+            <optgroup label="Selling">
+              <option>Find out what my home is worth</option>
+              <option>How much will I net after selling?</option>
+              <option>I inherited a property</option>
+              <option>Investment property — sell, rent, or 1031?</option>
+              <option>What improvements should I make before selling?</option>
+            </optgroup>
+            <optgroup label="Buying">
+              <option>I'm ready to start my home search</option>
+              <option>I'm a first-time buyer</option>
+            </optgroup>
+            <optgroup label="Lending">
+              <option>I need help finding the right loan</option>
+              <option>Down payment assistance / CalHFA</option>
+              <option>VA Loan — I'm a veteran or military</option>
+              <option>FHA Loan</option>
+            </optgroup>
+            <optgroup label="Special Programs">
+              <option>First Responder / Hero Program benefits</option>
+              <option>Healthcare worker home buying programs</option>
+              <option>Teacher / Educator home buying programs</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="form-group"><label>Tell Us More (optional)</label><textarea name="Message" placeholder="Give us a little more detail about your situation and what you're looking for..."></textarea></div>
+        <button type="submit" class="btn-submit">Connect Me With a Professional →</button>
+      </form>
+      <p class="form-note">Your information is private and will never be sold or shared. A local professional will be in touch within 24 hours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <div class="top">SoCal Home Network</div>
+      <span class="sub">Southern California &bull; Real Estate &amp; Lending</span>
+    </div>
+    <div class="footer-links">
+      <a href="#sellers">Sellers</a>
+      <a href="#buyers">Buyers</a>
+      <a href="#lending">Lending</a>
+      <a href="#heroes">Hero Programs</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 SoCal Home Network. All rights reserved. Real estate services provided by licensed California real estate professionals.</p>
+    <p>Serving Southern California — Los Angeles, San Bernardino, Riverside, Orange, Ventura, and San Diego Counties.</p>
+  </div>
+</footer>
+
+<script>
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  const SUBMIT_EMAIL = 'YOUR_EMAIL@socalHomenetwork.com'; // ← replace with real email when ready
+
+  async function submitForm(formId, successId, subject) {
+    const form = document.getElementById(formId);
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const orig = btn.textContent;
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      const data = {};
+      new FormData(form).forEach((v, k) => data[k] = v);
+      data['_subject'] = subject + ' — SoCal Home Network';
+      try {
+        await fetch('https://formsubmit.co/ajax/' + SUBMIT_EMAIL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        document.getElementById(successId).style.display = 'block';
+        form.style.display = 'none';
+      } catch {
+        btn.textContent = orig;
+        btn.disabled = false;
+        alert('Something went wrong. Please try again or call us directly.');
+      }
+    });
+  }
+
+  submitForm('hv-form',   'hv-success',   'Home Value Request');
+  submitForm('np-form',   'np-success',   'Net Proceeds Request');
+  submitForm('inh-form',  'inh-success',  'Inherited Property Inquiry');
+  submitForm('inv-form',  'inv-success',  'Investment Property Inquiry');
+  submitForm('imp-form',  'imp-success',  'Pre-Listing Consultation Request');
+  submitForm('buy-form',  'buy-success',  'Buyer Inquiry');
+  submitForm('lend-form', 'lend-success', 'Lending Inquiry');
+  submitForm('hero-form', 'hero-success', 'Hero Program Inquiry');
+  submitForm('gen-form',  'gen-success',  'General Inquiry');
+</script>
+</body>
+</html>
