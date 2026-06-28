@@ -148,16 +148,7 @@
     .topic-section:nth-child(even) { background: var(--surface); }
     .topic-section-inner { max-width: 1280px; margin: 0 auto; }
 
-    /* ── HERO PROGRAMS ── */
-    .hero-programs { background: linear-gradient(135deg, #0e1525 0%, #0a0f1e 100%); border-top: 2px solid var(--gold); }
-    .hero-program-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
-    .hero-program-card { background: rgba(201,168,76,0.05); border: 1px solid var(--border-gold); border-radius: var(--radius); padding: 2rem 1.75rem; }
-    .hero-program-card .badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(201,168,76,0.12); border: 1px solid var(--border-gold); border-radius: 20px; padding: 4px 12px; font-size: 0.62rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
-    .hero-program-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; }
-    .hero-program-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.25rem; }
-    .hero-program-card ul { padding-left: 1.2rem; }
-    .hero-program-card ul li { font-size: 0.8rem; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 0.25rem; }
-    .hero-program-card ul li::marker { color: var(--gold); }
+
 
     /* ── LOAN TYPES ── */
     .loan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
@@ -187,7 +178,6 @@
     @media (max-width: 1024px) {
       .topics-grid { grid-template-columns: repeat(2, 1fr); }
       .loan-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero-program-grid { grid-template-columns: 1fr; }
       .stats-inner { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 768px) {
@@ -210,7 +200,6 @@
       .stats-bar { padding: 2rem 5%; }
       .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
       .stat-num { font-size: 1.75rem; }
-      .hero-program-grid { grid-template-columns: 1fr; gap: 1rem; }
       .footer-inner { flex-direction: column; gap: 1.25rem; }
       .footer-links { gap: 1rem; }
       .footer-bottom { flex-direction: column; gap: 0.5rem; }
@@ -220,7 +209,6 @@
     @media (max-width: 480px) {
       .topics-grid { grid-template-columns: 1fr; }
       .stats-inner { grid-template-columns: 1fr 1fr; }
-      .hero-program-card { padding: 1.5rem 1.25rem; }
       .loan-card { padding: 1.25rem; }
       .lead-form { padding: 1.25rem; }
       .form-group input, .form-group select, .form-group textarea { font-size: 16px; } /* prevents iOS zoom */
@@ -245,7 +233,6 @@
       <li><a href="#sellers">Sellers</a></li>
       <li><a href="#buyers">Buyers</a></li>
       <li><a href="#lending">Lending</a></li>
-      <li><a href="#heroes">Hero Programs</a></li>
       <li><a href="#contact" class="nav-cta">Talk to a Professional</a></li>
     </ul>
     <button class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
@@ -328,12 +315,6 @@
         <div class="topic-tag">Lending</div>
         <h3>What Loan Is Right for Me?</h3>
         <p>FHA, VA, Conventional, Jumbo — find the loan that fits your situation and budget.</p>
-      </a>
-      <a href="#heroes" class="topic-card gold">
-        <div class="topic-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <div class="topic-tag">Special Programs</div>
-        <h3>First Responder, Healthcare & Teacher Programs</h3>
-        <p>Exclusive benefits, down payment assistance, and special loan programs for those who serve.</p>
       </a>
     </div>
   </div>
@@ -782,145 +763,6 @@
   </div>
 </section>
 
-<!-- ══════════════════════════
-     HERO PROGRAMS
-══════════════════════════ -->
-<section class="hero-programs" id="heroes" style="padding: 5rem 5%;">
-  <div class="section-inner">
-    <p class="section-label" style="color: var(--gold);">Special Programs</p>
-    <h2 class="section-title">You Serve Our Community.<br />We'll Help You Find Your Home.</h2>
-    <p class="section-sub">Exclusive real estate and lending programs for the people who keep our communities safe, healthy, and educated. You've earned these benefits — let us help you use them.</p>
-    <div class="hero-program-grid">
-
-      <div class="hero-program-card">
-        <div class="badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          First Responders
-        </div>
-        <h3>Police, Fire & EMT</h3>
-        <p>Law enforcement officers, firefighters, paramedics, and EMTs may qualify for exclusive home buying benefits including reduced rates, down payment assistance, and closing cost credits.</p>
-        <ul>
-          <li>Homes for Heroes affiliate benefits</li>
-          <li>Special lender rate reductions</li>
-          <li>Down payment assistance programs</li>
-          <li>Reduced real estate commissions and fees</li>
-          <li>Priority service and dedicated agent support</li>
-        </ul>
-      </div>
-
-      <div class="hero-program-card">
-        <div class="badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          Healthcare
-        </div>
-        <h3>Nurses, Doctors & Medical Staff</h3>
-        <p>Healthcare workers — including nurses, physicians, medical technicians, and hospital staff — qualify for special home buying programs designed to make homeownership more accessible.</p>
-        <ul>
-          <li>Healthcare worker mortgage programs</li>
-          <li>Reduced lender fees and points</li>
-          <li>Down payment and closing cost assistance</li>
-          <li>Flexible qualification for travel nurses</li>
-          <li>Dedicated agent who understands your schedule</li>
-        </ul>
-      </div>
-
-      <div class="hero-program-card">
-        <div class="badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-          Educators
-        </div>
-        <h3>Teachers & School Staff</h3>
-        <p>Teachers, administrators, and school staff qualify for some of the strongest home buying programs available — including CalHFA's school employee programs and Homes for Heroes benefits.</p>
-        <ul>
-          <li>CalHFA educator down payment programs</li>
-          <li>Extra assistance for Title I school employees</li>
-          <li>Homes for Heroes educator benefits</li>
-          <li>Reduced fees and priority service</li>
-          <li>Programs available for classified and certified staff</li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div style="margin-top: 3.5rem;">
-      <div class="lead-grid">
-        <div class="lead-copy">
-          <p class="section-label" style="color: var(--gold);">Hero Programs</p>
-          <h2 class="section-title">Find Out What Benefits You Qualify For</h2>
-          <p>Every program is different and benefits vary based on your profession, location, and financial situation. Fill out the form and one of our Hero Program specialists will reach out to walk you through exactly what you qualify for.</p>
-          <div class="lead-bullets">
-            <div class="lead-bullet"><div class="bullet-dot gold"></div>Free consultation — no obligation</div>
-            <div class="lead-bullet"><div class="bullet-dot gold"></div>Know your benefits before you start shopping</div>
-            <div class="lead-bullet"><div class="bullet-dot gold"></div>Combine programs for maximum savings</div>
-            <div class="lead-bullet"><div class="bullet-dot gold"></div>Agents who specialize in hero program transactions</div>
-          </div>
-        </div>
-        <div class="lead-form" style="border-color: var(--border-gold);">
-          <h3>Get My Hero Program Benefits</h3>
-          <p class="form-sub">Tell us about your profession and we'll find every benefit you qualify for.</p>
-          <div id="hero-success" class="form-success">✓ Request received! A Hero Program specialist will be in touch within 24 hours.</div>
-          <form id="hero-form">
-            <div class="form-row">
-              <div class="form-group"><label>First Name</label><input type="text" name="First Name" placeholder="Jane" required /></div>
-              <div class="form-group"><label>Last Name</label><input type="text" name="Last Name" placeholder="Smith" required /></div>
-            </div>
-            <div class="form-row">
-              <div class="form-group"><label>Phone</label><input type="tel" name="Phone" placeholder="(909) 555-0100" required /></div>
-              <div class="form-group"><label>Email</label><input type="email" name="Email" placeholder="jane@email.com" required /></div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label>Your Profession</label>
-                <select name="Profession" required>
-                  <option value="" disabled selected>Select profession</option>
-                  <optgroup label="First Responders">
-                    <option>Law Enforcement / Police Officer</option>
-                    <option>Firefighter</option>
-                    <option>Paramedic / EMT</option>
-                    <option>Corrections Officer</option>
-                    <option>911 Dispatcher</option>
-                  </optgroup>
-                  <optgroup label="Healthcare">
-                    <option>Registered Nurse (RN)</option>
-                    <option>Physician / Doctor</option>
-                    <option>Medical Technician</option>
-                    <option>Healthcare Administrator</option>
-                    <option>Other Healthcare Professional</option>
-                  </optgroup>
-                  <optgroup label="Educators">
-                    <option>K-12 Teacher</option>
-                    <option>School Administrator</option>
-                    <option>Classified School Staff</option>
-                    <option>College / University Staff</option>
-                  </optgroup>
-                  <optgroup label="Military">
-                    <option>Active Duty Military</option>
-                    <option>Veteran</option>
-                  </optgroup>
-                </select>
-              </div>
-              <div class="form-group">
-                <label>Buying or Selling?</label>
-                <select name="Goal">
-                  <option value="" disabled selected>Select</option>
-                  <option>Buying a Home</option>
-                  <option>Selling My Home</option>
-                  <option>Both — Selling and Buying</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Area You're Interested In</label>
-              <input type="text" name="Area" placeholder="City or zip code in Southern California" />
-            </div>
-            <button type="submit" class="btn-submit gold-btn">Find My Hero Benefits →</button>
-          </form>
-          <p class="form-note">Your information is private and will never be sold or shared.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ── GENERAL CONTACT ── -->
 <section id="contact" style="padding: 5rem 5%; border-top: 1px solid var(--border);">
@@ -960,11 +802,6 @@
               <option>VA Loan — I'm a veteran or military</option>
               <option>FHA Loan</option>
             </optgroup>
-            <optgroup label="Special Programs">
-              <option>First Responder / Hero Program benefits</option>
-              <option>Healthcare worker home buying programs</option>
-              <option>Teacher / Educator home buying programs</option>
-            </optgroup>
           </select>
         </div>
         <div class="form-group"><label>Tell Us More (optional)</label><textarea name="Message" placeholder="Give us a little more detail about your situation and what you're looking for..."></textarea></div>
@@ -986,7 +823,6 @@
       <a href="#sellers">Sellers</a>
       <a href="#buyers">Buyers</a>
       <a href="#lending">Lending</a>
-      <a href="#heroes">Hero Programs</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
@@ -1037,7 +873,6 @@
   submitForm('imp-form',  'imp-success',  'Pre-Listing Consultation Request');
   submitForm('buy-form',  'buy-success',  'Buyer Inquiry');
   submitForm('lend-form', 'lend-success', 'Lending Inquiry');
-  submitForm('hero-form', 'hero-success', 'Hero Program Inquiry');
   submitForm('gen-form',  'gen-success',  'General Inquiry');
 </script>
 </body>
