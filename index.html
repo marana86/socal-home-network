@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>SoCal Home Network | Real Estate & Lending Experts | Southern California</title>
   <meta name="description" content="SoCal Home Network connects home buyers, sellers, and borrowers with trusted real estate and lending professionals across Southern California." />
+  <link rel="canonical" href="https://marana86.github.io/socal-home-network/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
@@ -213,6 +216,46 @@
       .lead-form { padding: 1.25rem; }
       .form-group input, .form-group select, .form-group textarea { font-size: 16px; } /* prevents iOS zoom */
     }
+
+    /* ── LEGAL FOOTER ── */
+    .footer-legal {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 2.5rem 5%;
+      display: flex;
+      gap: 3rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .fair-housing-block {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      flex-shrink: 0;
+    }
+    .fair-housing-icon {
+      width: 48px;
+      height: 48px;
+      border: 2px solid rgba(255,255,255,0.15);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .fair-housing-block strong { display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.35rem; }
+    .fair-housing-block p { font-size: 0.68rem; color: rgba(255,255,255,0.2); line-height: 1.65; max-width: 280px; }
+    .legal-disclaimer-block { flex: 1; }
+    .legal-disclaimer-block p { font-size: 0.67rem; color: rgba(255,255,255,0.18); line-height: 1.7; margin-bottom: 0.6rem; }
+    .legal-disclaimer-block p:last-child { margin-bottom: 0; }
+    .footer-bottom-links { display: flex; gap: 1.25rem; }
+    .footer-bottom-links a { font-size: 0.72rem; color: rgba(255,255,255,0.3); text-decoration: none; }
+    .footer-bottom-links a:hover { color: var(--gold); }
+    .form-note a { color: rgba(255,255,255,0.3); text-decoration: underline; }
+    .form-note a:hover { color: var(--gold-light); }
+    @media (max-width: 768px) {
+      .footer-legal { flex-direction: column; gap: 1.75rem; }
+      .fair-housing-block p { max-width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -375,7 +418,7 @@
           </div>
           <button type="submit" class="btn-submit">Get My Free Home Value →</button>
         </form>
-        <p class="form-note">Your information is private and will never be sold or shared.</p>
+        <p class="form-note">By submitting, you consent to be contacted by phone, text, or email by SoCal Home Network and its affiliated professionals. Consent is not required to purchase. Msg &amp; data rates may apply. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
       </div>
     </div>
   </div>
@@ -422,7 +465,7 @@
           </div>
           <button type="submit" class="btn-submit">Get My Net Proceeds Estimate →</button>
         </form>
-        <p class="form-note">Your information is private and will never be sold or shared.</p>
+        <p class="form-note">By submitting, you consent to be contacted by phone, text, or email by SoCal Home Network and its affiliated professionals. Consent is not required to purchase. Msg &amp; data rates may apply. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
       </div>
     </div>
   </div>
@@ -471,7 +514,7 @@
           <div class="form-group"><label>Additional Details (optional)</label><textarea name="Details" placeholder="Tell us a little more about your situation..."></textarea></div>
           <button type="submit" class="btn-submit">Get Help With My Inherited Property →</button>
         </form>
-        <p class="form-note">Your information is private and will never be sold or shared.</p>
+        <p class="form-note">By submitting, you consent to be contacted by phone, text, or email by SoCal Home Network and its affiliated professionals. Consent is not required to purchase. Msg &amp; data rates may apply. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
       </div>
     </div>
   </div>
@@ -518,7 +561,7 @@
           </div>
           <button type="submit" class="btn-submit">Get Investment Property Guidance →</button>
         </form>
-        <p class="form-note">Your information is private and will never be sold or shared.</p>
+        <p class="form-note">By submitting, you consent to be contacted by phone, text, or email by SoCal Home Network and its affiliated professionals. Consent is not required to purchase. Msg &amp; data rates may apply. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
       </div>
     </div>
   </div>
@@ -578,7 +621,7 @@
           </div>
           <button type="submit" class="btn-submit">Get My Pre-Listing Consultation →</button>
         </form>
-        <p class="form-note">Your information is private and will never be sold or shared.</p>
+        <p class="form-note">By submitting, you consent to be contacted by phone, text, or email by SoCal Home Network and its affiliated professionals. Consent is not required to purchase. Msg &amp; data rates may apply. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
       </div>
     </div>
   </div>
@@ -639,7 +682,7 @@
           </div>
           <button type="submit" class="btn-submit">Start My Home Search →</button>
         </form>
-        <p class="form-note">Your information is private and will never be sold or shared.</p>
+        <p class="form-note">By submitting, you consent to be contacted by phone, text, or email by SoCal Home Network and its affiliated professionals. Consent is not required to purchase. Msg &amp; data rates may apply. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
       </div>
     </div>
   </div>
@@ -756,7 +799,7 @@
             </div>
             <button type="submit" class="btn-submit">Connect With a Lender →</button>
           </form>
-          <p class="form-note">Your information is private and will never be sold or shared.</p>
+          <p class="form-note">By submitting, you consent to be contacted by phone, text, or email by SoCal Home Network and its affiliated professionals. Consent is not required to purchase. Msg &amp; data rates may apply. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
         </div>
       </div>
     </div>
@@ -807,7 +850,7 @@
         <div class="form-group"><label>Tell Us More (optional)</label><textarea name="Message" placeholder="Give us a little more detail about your situation and what you're looking for..."></textarea></div>
         <button type="submit" class="btn-submit">Connect Me With a Professional →</button>
       </form>
-      <p class="form-note">Your information is private and will never be sold or shared. A local professional will be in touch within 24 hours.</p>
+      <p class="form-note">By submitting, you consent to be contacted by phone, text, or email by SoCal Home Network and its affiliated professionals. Consent is not required to purchase. Msg &amp; data rates may apply. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
     </div>
   </div>
 </section>
@@ -824,11 +867,38 @@
       <a href="#buyers">Buyers</a>
       <a href="#lending">Lending</a>
       <a href="#contact">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
     </div>
   </div>
+
+  <div class="footer-legal">
+    <div class="fair-housing-block">
+      <div class="fair-housing-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </div>
+      <div>
+        <strong>Equal Housing Opportunity</strong>
+        <p>SoCal Home Network is committed to Fair Housing. We do not discriminate on the basis of race, color, national origin, religion, sex, familial status, disability, or any other protected class under federal, state, or local law.</p>
+      </div>
+    </div>
+    <div class="legal-disclaimer-block">
+      <p><strong style="color:rgba(255,255,255,0.3);font-size:0.66rem;letter-spacing:1px;text-transform:uppercase;">Legal Disclaimer</strong></p>
+      <p>SoCal Home Network is a real estate marketing and referral service — not a licensed real estate broker, lender, or financial advisor. All real estate and lending services are provided by independently licensed California real estate professionals and lenders. California DRE license information is available upon request. SoCal Home Network may receive compensation in connection with referrals made through this site.</p>
+      <p>TCPA Notice: By submitting any form on this website, you expressly consent to receive calls and text messages — including automated messages — from SoCal Home Network and its affiliated professionals at the phone number provided. Standard message and data rates may apply. You may opt out at any time. Consent is not a condition of any purchase or service.</p>
+      <p>This site is protected by standard web security practices. Personal information submitted through this site is collected and used in accordance with our <a href="privacy.html" style="color:rgba(255,255,255,0.3);text-decoration:underline;">Privacy Policy</a>.</p>
+    </div>
+  </div>
+
   <div class="footer-bottom">
-    <p>&copy; 2026 SoCal Home Network. All rights reserved. Real estate services provided by licensed California real estate professionals.</p>
-    <p>Serving Southern California — Los Angeles, San Bernardino, Riverside, Orange, Ventura, and San Diego Counties.</p>
+    <p>&copy; 2026 SoCal Home Network. All rights reserved. Real estate services provided by licensed California professionals.</p>
+    <div class="footer-bottom-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
   </div>
 </footer>
 
